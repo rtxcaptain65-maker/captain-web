@@ -5,19 +5,19 @@
 </head>
 <body>
 
-<h1>สวัสดี นี่คือเว็บแรกของกัปตัน</h1>
-<p>ถ้ามึงเปิดหน้านี้ได้แปลว่ามึงกำลังโดนเกรียน</p>
-<button onclick="goToSite()">ไป google</button>
+<h1 style="font-size:50px;">สวัสดี นี่คือเว็บแรกของกัปตัน</h1>
+<p style="font-size:50px;">ถ้ามึงเปิดหน้านี้ได้แปลว่ามึงกำลังโดนเกรียน</p>
+<button style="font-size:50px;" onclick="goToSite()">ไป google</button>
 
-<button onclick="showImage()">กดเปิดปิดรูป</button>
+<button style="font-size:50px;" onclick="showImage()">กดเปิดปิดรูป</button>
 
-<button onclick="playSound()">กดเล่นเสียง</button>
-<button onclick="myVi()">กดเล่นวิดิโอ</button>
+<button style="font-size:50px;" onclick="playSound()">กดเล่นเสียง</button>
+<button style="font-size:50px;" onclick="myVi()">กดเล่นวิดิโอ</button>
 
 <br><br>
 
 <video id="myVideo" width="0" height="0">
-  <source src="https://vocal-ivory-hp8cjjaqhd.edgeone.app/VID_20260309_185725.mp4" type="video/mp4"video.pause();>
+  <source src="https://vocal-ivory-hp8cjjaqhd.edgeone.app/VID_20260309_185725.mp4" type="video/mp4">
 </video>
 
 <audio id="sound">
@@ -31,72 +31,73 @@
 <img id="myImage" src="https://wittering-indigo-agdiu6q9xm.edgeone.app/70f7a070665b34a456809a905eb5f45e.jpg" width="300" style="display:none;">
 
 <script>
-function showImage() {
-    let y = 
-  document.getElementById("myImage");
-  
-  if(y.style.display === "none"){
-      y.width = 300;
-      y.height = 200;
-      y.style.display = "block";
-       
-  }else{
-      y.width = 0;
-      y.height = 0;
-      y.style.display = "none";
-  }
-  
-  document.getElementById("sound_1").play();
+function showImage(){
+let ss = document.getElementById("sound");
+let su = document.getElementById("sound_1");
+let img = document.getElementById("myImage");
+let vid = document.getElementById("myVideo");
+
+if(img.style.display === "none"){
+
+    vid.pause();
+    vid.width = 0;
+    vid.height = 0;
+    su.play();
+    img.style.display = "block";
+    ss.pause();
+}else{
+
+    img.style.display = "none";
+    su.play();
+}
 
 }
 
 function playSound() {
-  document.getElementById("sound").play();
+  let ss = document.getElementById("sound")
+  let img = document.getElementById("myImage");
+  let vid = document.getElementById("myVideo");
+  if(ss.paused){
+   img.style.display = "none"
+   vid.pause();
+   vid.width = 0;
+   vid.height = 0;
+   ss.play();
+  }else{
+    ss.pause();
+    
+  }
 }
 
 function goToSite() {
   document.getElementById("sound_1").play();
   window.location.href = "https://google.com";
-
+  document.getElementById("sound").pause();
+  document.getElementById("myVideo").pause();
 }
 
-function myVi() {
-    let v =
-  document.getElementById("myVideo")
-  if(v.pause){
-  v.width = 200;
-  v.height = 300;
-  v.play();
-
- }else{
-  v.style.display === "none";
-  v.pause();
- }  
-}
-
-function myVi() {
-    let vi =
-  document.getElementById("myVideo")
-    let im =
-  document.getElementById("myImage")
-  
-  im.style.display = "none";  
-  
-  vi.width = 200;
-  vi.height = 300;
-  vi.play
- }
- function showImage(){
-
-let img = document.getElementById("myImage");
+function myVi(){
+let ss = document.getElementById("sound");   
+let sud = document.getElementById("sound_1");
 let vid = document.getElementById("myVideo");
+let img = document.getElementById("myImage");
+
+if(vid.paused){
+ss.pause();
+img.style.display = "none";
+vid.width = 500;
+vid.height = 300;
+vid.play();
+sud.play();
+}else{
 
 vid.pause();
 vid.width = 0;
 vid.height = 0;
-img.style.display = "block";
+sud.play();
+}
 
- }
+}
 
 </script>
 
