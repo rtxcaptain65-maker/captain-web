@@ -5,10 +5,100 @@
 </head>
 <body>
 
-<h1>สวัสดี นี่คือเว็บแรกของกู</h1>
-<p>ถ้ามึงเปิดหน้านี้ได้ แปลว่าเว็บำทงานแล้ว</p>
+<h1>สวัสดี นี่คือเว็บแรกของกัปตัน</h1>
+<p>ถ้ามึงเปิดหน้านี้ได้แปลว่ามึงกำลังโดนเกรียน</p>
+<button onclick="goToSite()">ไป google</button>
 
-<button onclick="alert('มึงกดปุ่มแล้ว!')">กด</button>
+<button onclick="showImage()">กดเปิดปิดรูป</button>
+
+<button onclick="playSound()">กดเล่นเสียง</button>
+<button onclick="myVi()">กดเล่นวิดิโอ</button>
+
+<br><br>
+
+<video id="myVideo" width="0" height="0">
+  <source src="https://vocal-ivory-hp8cjjaqhd.edgeone.app/VID_20260309_185725.mp4" type="video/mp4"video.pause();>
+</video>
+
+<audio id="sound">
+  <source src="https://right-chocolate-ozynw1ohcw.edgeone.app/61b87ec0746167e845d4ddc8a88c1844.mp3">
+</audio>
+
+<audio id="sound_1">
+  <source src="https://sensible-moccasin-mpxrz6i0vj.edgeone.app/VID_20260309_192909.mp3" type="audio/mpeg">
+</audio>
+
+<img id="myImage" src="https://wittering-indigo-agdiu6q9xm.edgeone.app/70f7a070665b34a456809a905eb5f45e.jpg" width="300" style="display:none;">
+
+<script>
+function showImage() {
+    let y = 
+  document.getElementById("myImage");
+  
+  if(y.style.display === "none"){
+      y.width = 300;
+      y.height = 200;
+      y.style.display = "block";
+       
+  }else{
+      y.width = 0;
+      y.height = 0;
+      y.style.display = "none";
+  }
+  
+  document.getElementById("sound_1").play();
+
+}
+
+function playSound() {
+  document.getElementById("sound").play();
+}
+
+function goToSite() {
+  document.getElementById("sound_1").play();
+  window.location.href = "https://google.com";
+
+}
+
+function myVi() {
+    let v =
+  document.getElementById("myVideo")
+  if(v.pause){
+  v.width = 200;
+  v.height = 300;
+  v.play();
+
+ }else{
+  v.style.display === "none";
+  v.pause();
+ }  
+}
+
+function myVi() {
+    let vi =
+  document.getElementById("myVideo")
+    let im =
+  document.getElementById("myImage")
+  
+  im.style.display = "none";  
+  
+  vi.width = 200;
+  vi.height = 300;
+  vi.play
+ }
+ function showImage(){
+
+let img = document.getElementById("myImage");
+let vid = document.getElementById("myVideo");
+
+vid.pause();
+vid.width = 0;
+vid.height = 0;
+img.style.display = "block";
+
+ }
+
+</script>
 
 </body>
 </html>
